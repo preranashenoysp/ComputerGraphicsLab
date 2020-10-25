@@ -192,7 +192,7 @@ void main(int argc, char* argv[])
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(0, 0);
-	
+	/*
 	//FOR MOUSE
 	int id1 = glutCreateWindow("Circle");
 	glutSetWindow(id1);
@@ -206,7 +206,7 @@ void main(int argc, char* argv[])
 	glutMouseFunc(myMouseFunc);
 	glutDisplayFunc(myDrawing);
 	//END MOUSE
-	/*
+	*/
 	//FOR KEYBOARD
 	printf("Enter 1 to draw circle , 2 to draw ellipse\n");
 	int ch;
@@ -226,7 +226,6 @@ void main(int argc, char* argv[])
 		break;
 	}
 	//END KEYBOARD 
-	*/
 	minit();
 	glutMainLoop();
 }
