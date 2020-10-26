@@ -1,5 +1,4 @@
-#include<iostream>
-using namespace std;
+#include<stdio.h>
 #include<GL/glut.h>
 
 int m;
@@ -62,8 +61,8 @@ void myinit()
 
 void main(int argcp, char** argv)
 {
-	cout << "Enter number of steps : ";
-	cin >> m;
+	printf_s("Enter number of steps : ");
+	scanf_s("%d",&m);
 	glutInit(&argcp, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_DEPTH);
 	glutInitWindowSize(300, 300);
