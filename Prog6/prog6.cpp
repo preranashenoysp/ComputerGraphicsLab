@@ -1,9 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<iostream>
 #include<gl/glut.h>
-using namespace std;
-
 
 #define outcode int
 #define true 1
@@ -158,29 +155,25 @@ void myinit()
 	gluOrtho2D(0, 500, 0, 500);
 }
 
-int main(int argc, char** argv)
+void main(int argc, char** argv)
 {
-	cout << "Enter window coordinates (xmin ymin xmax ymax): \n";
-	cin >> xmin >> ymin >> xmax >> ymax;
-	cout << "Enter viewport coordinates (xvmin yvmin xvmax yvmax) : \n";
-	cin >> xvmin >> yvmin >> xvmax >> yvmax;
-	cout << "Enter no. of lines:\n";
-	cin >> n;
-
+	printf_s("Enter window coordinates (xmin ymin xmax ymax): \n");
+	scanf_s("%lf%lf%lf%lf", &xmin, &ymin, &xmax, &ymax);
+	printf_s("Enter viewport coordinates (xvmin yvmin xvmax yvmax) :\n");
+	scanf_s("%lf%lf%lf%lf", &xvmin, &yvmin, &xvmax, &yvmax);
+	printf_s("Enter no. of lines:\n");
+	scanf_s("%d", &n);
 	for (int i = 0; i < n; i++)
 	{
-		cout << "Enter line endpoints (x1 y1 x2 y2):\n";
-		cin >> ls[i].x1 >> ls[i].y1 >> ls[i].x2 >> ls[i].y2;
-
-		//scanf("%d%d%d%d", &ls[i].x1, &ls[i].y1, &ls[i].x2, &ls[i].y2);
+		printf_s("Enter line endpoints (x1 y1 x2 y2):\n");
+		scanf_s("%d%d%d%d", &ls[i].x1, &ls[i].y1, &ls[i].x2, &ls[i].y2);
 	}
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize(500, 500);
 	glutInitWindowPosition(0, 0);
-	glutCreateWindow("Cohen-Sutherland line clipping");
+	glutCreateWindow("clip");
 	myinit();
 	glutDisplayFunc(display);
 	glutMainLoop();
-	return 0;
 }
